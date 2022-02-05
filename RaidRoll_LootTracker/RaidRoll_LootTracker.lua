@@ -3,12 +3,12 @@ RaidRoll_LootTrackerLoaded=true
 
 
 function RaidRoll_LootPanel_Setup()
-	
+
 -- Options menu
 	Raid_Roll_PanelName_String =  RaidRoll_LootPanel:CreateFontString("Raid_Roll_PanelName_String" ,"ARTWORK","GameFontNormal");
 	Raid_Roll_PanelName_String:SetPoint("TopLeft", RaidRoll_LootPanel, "TopLeft", 20, -10)
 	Raid_Roll_PanelName_String:SetJustifyH("LEFT")
-	
+
 	Raid_Roll_PanelName_String:SetText("|cFFC41F3B" .. RAIDROLL_LOCALE["OPTIONSTITLE"] .. " (Loot Window)")
 	if (GetLocale() == "zhTW") then
 		Raid_Roll_PanelName_String:SetFont("Fonts\\FRIZQT__.TTF", 16)
@@ -20,7 +20,7 @@ function RaidRoll_LootPanel_Setup()
 	Raid_Roll_SetMsg1_String =  RaidRoll_LootPanel:CreateFontString("Raid_Roll_SetMsg1_String" ,"ARTWORK","GameFontNormal");
 	Raid_Roll_SetMsg1_String:SetPoint("TopLeft", RaidRoll_LootPanel, "TOPLEFT", 10, -50)
 	Raid_Roll_SetMsg1_String:SetJustifyH("LEFT")
-	
+
 	Raid_Roll_SetMsg1_String:SetText("|cFF69CCF0" .. RAIDROLL_LOCALE["Set_Msg1"])
 	if (GetLocale() ~= "zhTW") then
 		Raid_Roll_SetMsg1_String:SetFont("Fonts\\FRIZQT__.TTF", 14)
@@ -28,13 +28,13 @@ function RaidRoll_LootPanel_Setup()
 	if (GetLocale() == "zhCN") then
 		Raid_Roll_SetMsg1_String:SetFont("Fonts\\ZYKai_T.TTF", 15)
 	end
-	
+
 -- Msg1 edit box
 	RR_Msg1_FRAME = CreateFrame("Frame","RR_Msg1_FRAME",RaidRoll_LootPanel)
 	rr_MsgFrame_backdrop = {
-		bgFile = 	"",	
+		bgFile = 	"",
 		edgeFile = 	"Interface\\Tooltips\\UI-Tooltip-Border",  -- path to the border texture
-	  
+
 	  tile = false,    -- true to repeat the background texture to fill the frame, false to scale it
 	  tileSize = 32,  -- size (width or height) of the square repeating background tiles (in pixels)
 	  edgeSize = 20,  -- thickness of edge segments and square size of edge corners (in pixels)
@@ -46,10 +46,10 @@ function RaidRoll_LootPanel_Setup()
 	  }
 	}
 	RR_Msg1_FRAME:SetBackdrop(rr_MsgFrame_backdrop)
-	RR_Msg1_FRAME:SetWidth(390) -- Set these to whatever height/width is needed 
-	RR_Msg1_FRAME:SetHeight(25) -- Set these to whatever height/width is needed 
+	RR_Msg1_FRAME:SetWidth(390) -- Set these to whatever height/width is needed
+	RR_Msg1_FRAME:SetHeight(25) -- Set these to whatever height/width is needed
 	RR_Msg1_FRAME:SetPoint("TopLeft", RaidRoll_LootPanel, "TOPLEFT", 10, -70)
-	
+
 	Raid_Roll_SetMsg1_EditBox = CreateFrame("EditBox", "Raid_Roll_SetMsg1_EditBox", RaidRoll_LootPanel, InputBoxTemplate )
 	if (GetLocale() ~= "zhTW") then
 		Raid_Roll_SetMsg1_EditBox:SetFont("Fonts\\FRIZQT__.TTF", 14)
@@ -69,15 +69,15 @@ function RaidRoll_LootPanel_Setup()
 													end)
 	Raid_Roll_SetMsg1_EditBox:SetScript("OnEnterPressed",	function() Raid_Roll_SetMsg1_EditBox:ClearFocus() 	end)
 	Raid_Roll_SetMsg1_EditBox:SetScript("OnEscapePressed",	function() Raid_Roll_SetMsg1_EditBox:ClearFocus()	end)
-	
-	
-	
+
+
+
 -- Set Msg2
 
 	Raid_Roll_SetMsg2_String =  RaidRoll_LootPanel:CreateFontString("Raid_Roll_SetMsg2_String" ,"ARTWORK","GameFontNormal");
 	Raid_Roll_SetMsg2_String:SetPoint("TopLeft", RaidRoll_LootPanel, "TOPLEFT", 10, -100)
 	Raid_Roll_SetMsg2_String:SetJustifyH("LEFT")
-	
+
 	Raid_Roll_SetMsg2_String:SetText("|cFF69CCF0" .. RAIDROLL_LOCALE["Set_Msg2"])
 	if (GetLocale() ~= "zhTW") then
 		Raid_Roll_SetMsg2_String:SetFont("Fonts\\FRIZQT__.TTF", 14)
@@ -85,13 +85,13 @@ function RaidRoll_LootPanel_Setup()
 	if (GetLocale() == "zhCN") then
 		Raid_Roll_SetMsg2_String:SetFont("Fonts\\ZYKai_T.TTF", 15)
 	end
-	
+
 -- Msg2 edit box
 	RR_Msg2_FRAME = CreateFrame("Frame","RR_Msg2_FRAME",RaidRoll_LootPanel)
 	rr_MsgFrame_backdrop = {
-		bgFile = 	"",	
+		bgFile = 	"",
 		edgeFile = 	"Interface\\Tooltips\\UI-Tooltip-Border",  -- path to the border texture
-	  
+
 	  tile = false,    -- true to repeat the background texture to fill the frame, false to scale it
 	  tileSize = 32,  -- size (width or height) of the square repeating background tiles (in pixels)
 	  edgeSize = 20,  -- thickness of edge segments and square size of edge corners (in pixels)
@@ -103,10 +103,10 @@ function RaidRoll_LootPanel_Setup()
 	  }
 	}
 	RR_Msg2_FRAME:SetBackdrop(rr_MsgFrame_backdrop)
-	RR_Msg2_FRAME:SetWidth(390) -- Set these to whatever height/width is needed 
-	RR_Msg2_FRAME:SetHeight(25) -- Set these to whatever height/width is needed 
+	RR_Msg2_FRAME:SetWidth(390) -- Set these to whatever height/width is needed
+	RR_Msg2_FRAME:SetHeight(25) -- Set these to whatever height/width is needed
 	RR_Msg2_FRAME:SetPoint("TopLeft", RaidRoll_LootPanel, "TOPLEFT", 10, -120)
-	
+
 	Raid_Roll_SetMsg2_EditBox = CreateFrame("EditBox", "Raid_Roll_SetMsg2_EditBox", RaidRoll_LootPanel, InputBoxTemplate )
 	if (GetLocale() ~= "zhTW") then
 		Raid_Roll_SetMsg2_EditBox:SetFont("Fonts\\FRIZQT__.TTF", 14)
@@ -126,19 +126,19 @@ function RaidRoll_LootPanel_Setup()
 													end)
 	Raid_Roll_SetMsg2_EditBox:SetScript("OnEnterPressed",	function() Raid_Roll_SetMsg2_EditBox:ClearFocus() 	end)
 	Raid_Roll_SetMsg2_EditBox:SetScript("OnEscapePressed",	function() Raid_Roll_SetMsg2_EditBox:ClearFocus()	end)
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
 -- Set Msg3
 	Raid_Roll_SetMsg3_String =  RaidRoll_LootPanel:CreateFontString("Raid_Roll_SetMsg3_String" ,"ARTWORK","GameFontNormal");
 	Raid_Roll_SetMsg3_String:SetPoint("TopLeft", RaidRoll_LootPanel, "TOPLEFT", 10, -150)
 	Raid_Roll_SetMsg3_String:SetJustifyH("LEFT")
-	
+
 	Raid_Roll_SetMsg3_String:SetText("|cFF69CCF0" .. RAIDROLL_LOCALE["Set_Msg3"])
 	if (GetLocale() ~= "zhTW") then
 		Raid_Roll_SetMsg3_String:SetFont("Fonts\\FRIZQT__.TTF", 14)
@@ -146,13 +146,13 @@ function RaidRoll_LootPanel_Setup()
 	if (GetLocale() == "zhCN") then
 		Raid_Roll_SetMsg3_String:SetFont("Fonts\\ZYKai_T.TTF", 15)
 	end
-	
+
 -- Msg3 edit box
 	RR_Msg3_FRAME = CreateFrame("Frame","RR_Msg3_FRAME",RaidRoll_LootPanel)
 	rr_MsgFrame_backdrop = {
-		bgFile = 	"",	
+		bgFile = 	"",
 		edgeFile = 	"Interface\\Tooltips\\UI-Tooltip-Border",  -- path to the border texture
-	  
+
 	  tile = false,    -- true to repeat the background texture to fill the frame, false to scale it
 	  tileSize = 32,  -- size (width or height) of the square repeating background tiles (in pixels)
 	  edgeSize = 20,  -- thickness of edge segments and square size of edge corners (in pixels)
@@ -164,10 +164,10 @@ function RaidRoll_LootPanel_Setup()
 	  }
 	}
 	RR_Msg3_FRAME:SetBackdrop(rr_MsgFrame_backdrop)
-	RR_Msg3_FRAME:SetWidth(390) -- Set these to whatever height/width is needed 
-	RR_Msg3_FRAME:SetHeight(25) -- Set these to whatever height/width is needed 
+	RR_Msg3_FRAME:SetWidth(390) -- Set these to whatever height/width is needed
+	RR_Msg3_FRAME:SetHeight(25) -- Set these to whatever height/width is needed
 	RR_Msg3_FRAME:SetPoint("TopLeft", RaidRoll_LootPanel, "TOPLEFT", 10, -170)
-	
+
 	Raid_Roll_SetMsg3_EditBox = CreateFrame("EditBox", "Raid_Roll_SetMsg3_EditBox", RaidRoll_LootPanel, InputBoxTemplate )
 	if (GetLocale() ~= "zhTW") then
 		Raid_Roll_SetMsg3_EditBox:SetFont("Fonts\\FRIZQT__.TTF", 14)
@@ -187,16 +187,16 @@ function RaidRoll_LootPanel_Setup()
 													end)
 	Raid_Roll_SetMsg3_EditBox:SetScript("OnEnterPressed",	function() Raid_Roll_SetMsg3_EditBox:ClearFocus() 	end)
 	Raid_Roll_SetMsg3_EditBox:SetScript("OnEscapePressed",	function() Raid_Roll_SetMsg3_EditBox:ClearFocus()	end)
-	
-	
-	
-	
+
+
+
+
 -- (Use [item] to announce the itemlink)
 
 	Raid_Roll_PanelName_String =  RaidRoll_LootPanel:CreateFontString("Raid_Roll_PanelName_String" ,"ARTWORK","GameFontNormal");
 	Raid_Roll_PanelName_String:SetPoint("TopLeft", RaidRoll_LootPanel, "TopLeft", 15, -200)
 	Raid_Roll_PanelName_String:SetJustifyH("LEFT")
-	
+
 	Raid_Roll_PanelName_String:SetText("|cFFFFFFFF" .. RAIDROLL_LOCALE["Use_Item_Brackets"])
 	if (GetLocale() ~= "zhTW") then
 		Raid_Roll_PanelName_String:SetFont("Fonts\\FRIZQT__.TTF", 12)
@@ -208,7 +208,7 @@ function RaidRoll_LootPanel_Setup()
 	Raid_Roll_PanelName_String =  RaidRoll_LootPanel:CreateFontString("Raid_Roll_PanelName_String" ,"ARTWORK","GameFontNormal");
 	Raid_Roll_PanelName_String:SetPoint("TopLeft", RaidRoll_LootPanel, "TopLeft", 20, -230)
 	Raid_Roll_PanelName_String:SetJustifyH("LEFT")
-	
+
 	Raid_Roll_PanelName_String:SetText("|cFF2459FF" .. RAIDROLL_LOCALE["General_Settings"])
 	if (GetLocale() ~= "zhTW") then
 		Raid_Roll_PanelName_String:SetFont("Fonts\\FRIZQT__.TTF", 16)
@@ -216,7 +216,7 @@ function RaidRoll_LootPanel_Setup()
 	if (GetLocale() == "zhCN") then
 		Raid_Roll_PanelName_String:SetFont("Fonts\\ZYKai_T.TTF", 15)
 	end
-	
+
 -- [ ] Automatically open window when loot is found
 
   	RR_AutoOpenLootWindow = CreateFrame("CheckButton", "RR_AutoOpenLootWindow", RaidRoll_LootPanel, "UICheckButtonTemplate")
@@ -231,9 +231,9 @@ function RaidRoll_LootPanel_Setup()
 		_G["RR_AutoOpenLootWindow".."Text"]:SetFont("Fonts\\ZYKai_T.TTF", 15)
 	end
 	RR_AutoOpenLootWindow:SetScript("OnClick",RaidRoll_CheckButton_Update_Panel)
-	
-	
--- [ ] Receive loot messages from guild 
+
+
+-- [ ] Receive loot messages from guild
 
   	RR_ReceiveGuildMessages = CreateFrame("CheckButton", "RR_ReceiveGuildMessages", RaidRoll_LootPanel, "UICheckButtonTemplate")
 	RR_ReceiveGuildMessages:SetWidth(20)
@@ -248,7 +248,7 @@ function RaidRoll_LootPanel_Setup()
 	end
 	RR_ReceiveGuildMessages:SetScript("OnClick",RaidRoll_CheckButton_Update_Panel)
 
-	
+
 -- [ ] Enable 3 Messages
   	RR_Enable3Messages = CreateFrame("CheckButton", "RR_Enable3Messages", RaidRoll_LootPanel, "UICheckButtonTemplate")
 	RR_Enable3Messages:SetWidth(20)
@@ -262,7 +262,7 @@ function RaidRoll_LootPanel_Setup()
 		_G["RR_Enable3Messages".."Text"]:SetFont("Fonts\\ZYKai_T.TTF", 15)
 	end
 	RR_Enable3Messages:SetScript("OnClick",RaidRoll_CheckButton_Update_Panel)
-	
+
 -- [ ] Enable 3 Messages
   	RR_Frame_WotLK_Dung_Only = CreateFrame("CheckButton", "RR_Frame_WotLK_Dung_Only", RaidRoll_LootPanel, "UICheckButtonTemplate")
 	RR_Frame_WotLK_Dung_Only:SetWidth(20)
@@ -278,16 +278,16 @@ function RaidRoll_LootPanel_Setup()
 	RR_Frame_WotLK_Dung_Only:SetScript("OnClick",RaidRoll_CheckButton_Update_Panel)
 	RR_Frame_WotLK_Dung_Only:SetScript("OnEnter",function(self) RR_MouseOverTooltip(self:GetName())	end)
 	RR_Frame_WotLK_Dung_Only:SetScript("OnLeave", function() GameTooltip:Hide()	end)
-	
+
 	--[[
 -- Give Extra Priority to:
 	Raid_Roll_PanelName_String =  RaidRoll_LootPanel:CreateFontString("Raid_Roll_PanelName_String" ,"ARTWORK","GameFontNormal");
 	Raid_Roll_PanelName_String:SetPoint("TopLeft", RaidRoll_LootPanel, "TopLeft", 20, -40)
 	Raid_Roll_PanelName_String:SetJustifyH("LEFT")
-	
+
 	Raid_Roll_PanelName_String:SetText("|cFF2459FF" .. RAIDROLL_LOCALE["General_Settings"])
 	Raid_Roll_PanelName_String:SetFont("Fonts\\FRIZQT__.TTF", 16)
-	
+
 	-- [ ] Catch Unannounced Rolls
   	RR_RollCheckBox_Unannounced_panel = CreateFrame("CheckButton", "RR_RollCheckBox_Unannounced_panel", RaidRoll_LootPanel, "UICheckButtonTemplate")
 	RR_RollCheckBox_Unannounced_panel:SetWidth(20)
@@ -296,9 +296,9 @@ function RaidRoll_LootPanel_Setup()
 	_G["RR_RollCheckBox_Unannounced_panel".."Text"]:SetText("|cFFFFFFFF" .. RAIDROLL_LOCALE["Catch_Unannounced_Rolls"])
 	_G["RR_RollCheckBox_Unannounced_panel".."Text"]:SetFont("Fonts\\FRIZQT__.TTF", 12)
 	RR_RollCheckBox_Unannounced_panel:SetScript("OnClick",RaidRoll_CheckButton_Update_Panel)
-	
+
 ]]
-	
+
 end
 
 
@@ -326,26 +326,26 @@ local Version,mob_guid,player_name,mob_name,LootNumber,ItemLink,rarity,lootIcon,
 
 -- Ignore the message if it comes from guild and you have that option turned off
 	if Channel == "RAID"  or Channel == "PARTY"  or (Channel == "GUILD" and RaidRoll_DBPC[UnitName("player")]["RR_ReceiveGuildMessages"] == true) then
-		
-		if String~= nil then 
+
+		if String~= nil then
 				Seperator = "\a" -- "\226\149\145"
 				Version,_ = strsplit(Seperator, String,2)
-			
+
 			if  Version == nil then
 				if time() >= RR_LastItemDataReSent + 5 then
 					SendAddonMessage( "RRL", "Request" ,"RAID" );
 				end
 			end
-			
-			
-			
+
+
+
 			-- Alpha Version Handler
 			if Version == "Alpha" then
-				
+
 				Version,mob_guid,player_name,mob_name,LootNumber,ItemLink,rarity,lootIcon,lootName,ItemLvl,_ = strsplit(Seperator, String,11)
-				
+
 				rarity = tonumber(rarity)
-				
+
 				if RaidRoll_DB["debug"] == true then
 					RR_Test("-----Item Received Breakdown-----")
 					RR_Test(String)
@@ -361,12 +361,12 @@ local Version,mob_guid,player_name,mob_name,LootNumber,ItemLink,rarity,lootIcon,
 					RR_Test(strlen(String))
 					RR_Test(Channel)
 				end
-				
+
 				RR_DuplicateItemFound = false
-				
-				TotalWindows = RaidRoll_DB["Loot"]["TOTAL WINDOWS"] 
-				CurrentWindow = RaidRoll_DB["Loot"]["CURRENT WINDOW"] 
-				
+
+				TotalWindows = RaidRoll_DB["Loot"]["TOTAL WINDOWS"]
+				CurrentWindow = RaidRoll_DB["Loot"]["CURRENT WINDOW"]
+
 				if RaidRoll_DB["Loot"][TotalWindows]["TOTAL ITEMS"] ~= nil then
 					for i=1,RaidRoll_DB["Loot"][TotalWindows]["TOTAL ITEMS"] do
 						if RaidRoll_DB["Loot"][TotalWindows]["ITEM_" .. i]["LOOTNAME"] == lootName then
@@ -374,16 +374,16 @@ local Version,mob_guid,player_name,mob_name,LootNumber,ItemLink,rarity,lootIcon,
 						end
 					end
 				end
-				
+
 				if RR_LastLootMessageTime == nil then RR_LastLootMessageTime = 0 end
-				
-				if RaidRoll_DB["debug"] == true then 
+
+				if RaidRoll_DB["debug"] == true then
 					RR_Test("---Addon Message Times---")
 					RR_Test(RR_LastLootMessageTime)
-					RR_Test(GetTime())		
-					RR_Test(GetTime()-RR_LastLootMessageTime)		
+					RR_Test(GetTime())
+					RR_Test(GetTime()-RR_LastLootMessageTime)
 				end
-				
+
 				-- If the time record is empty or if the message is received in more than 30 seconds of the last one then create a new window
 				if RR_DuplicateItemFound == false then
 					if GetTime() > (RR_LastLootMessageTime + 30) then
@@ -397,19 +397,19 @@ local Version,mob_guid,player_name,mob_name,LootNumber,ItemLink,rarity,lootIcon,
 						end
 					end
 				end
-				
-				TotalWindows = RaidRoll_DB["Loot"]["TOTAL WINDOWS"] 
-				CurrentWindow = RaidRoll_DB["Loot"]["CURRENT WINDOW"] 
-				
+
+				TotalWindows = RaidRoll_DB["Loot"]["TOTAL WINDOWS"]
+				CurrentWindow = RaidRoll_DB["Loot"]["CURRENT WINDOW"]
+
 				if RaidRoll_DB["Loot"][TotalWindows] == nil then
 					RaidRoll_DB["Loot"][TotalWindows] = {}
 				end
-				
+
 				local _, _, _, _, ItemId = string.find(ItemLink, "|?c?f?f?(%x*)|?H?([^:]*):?(%d+):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%-?%d*):?(%-?%d*):?(%d*)|?h?%[?([^%[%]]*)%]?|?h?|?r?")
-				
-				
+
+
 				ItemId = tonumber(ItemId)
-				
+
 				if ItemLvl == nil then
 					ItemLvl = GetItemInfo(ItemId);
 				else
@@ -417,15 +417,15 @@ local Version,mob_guid,player_name,mob_name,LootNumber,ItemLink,rarity,lootIcon,
 						ItemLvl = GetItemInfo(ItemId);
 					end
 				end
-				
+
 				if ItemLvl == nil then
 					ItemLvl = 0
 				end
-				
+
 				ItemLvl = tonumber(ItemLvl)
-				
-				
-				
+
+
+
 				AcceptItem = false
 			-- Special rare items that should be included
 				if 	ItemId == 	46110 	or		-- Alchemist's Cache
@@ -437,19 +437,19 @@ local Version,mob_guid,player_name,mob_name,LootNumber,ItemLink,rarity,lootIcon,
 				else
 					if RaidRoll_DB["debug"] == true then RR_Test("[Rarity] This is >NOT< an acceptable Item - " .. lootName) end
 				end
-				
-				
+
+
 				DontAcceptItem = false
 			-- Special epic items that should not be included
 				if 	ItemId == 	34057 	or		-- Abyss Crystal
-				
+
 					ItemId == 	36931	or		-- Ametrine
 					ItemId == 	36919	or		-- Cardinal Ruby
 					ItemId == 	36928	or		-- Dreadstone
 					ItemId == 	36934	or		-- Eye of Zul
 					ItemId == 	36922	or		-- King's Amber
 					ItemId == 	36925	or		-- Majestic Zircon
-					
+
 					ItemId == 	47241	or		-- Emblem of Triumph
 					ItemId == 	49426	then	-- Emblem of Frost
 						DontAcceptItem = true
@@ -457,10 +457,10 @@ local Version,mob_guid,player_name,mob_name,LootNumber,ItemLink,rarity,lootIcon,
 				else
 					if RaidRoll_DB["debug"] == true then RR_Test("[Epic Items] This is an acceptable Item - " .. lootName) end
 				end
-				
+
 				if rarity == nil then rarity = 0 end
 				if AcceptItem == nil then AcceptItem = false end
-				
+
 				if rarity > 3 or RaidRoll_DB["debug"] == true or AcceptItem == true then
 					if DontAcceptItem == false then
 						if RR_DuplicateItemFound == false then
@@ -469,34 +469,34 @@ local Version,mob_guid,player_name,mob_name,LootNumber,ItemLink,rarity,lootIcon,
 							RaidRoll_DB["Loot"][TotalWindows]["MOB NAME"] 		= mob_name
 							if RaidRoll_DB["Loot"][TotalWindows]["TOTAL ITEMS"] == nil then RaidRoll_DB["Loot"][TotalWindows]["TOTAL ITEMS"] = 0 end
 							RaidRoll_DB["Loot"][TotalWindows]["TOTAL ITEMS"]  	= RaidRoll_DB["Loot"][TotalWindows]["TOTAL ITEMS"] + 1
-							
+
 							LootNumber = RaidRoll_DB["Loot"][TotalWindows]["TOTAL ITEMS"]
-							
+
 							if RaidRoll_DB["Loot"][TotalWindows]["ITEM_" .. LootNumber] == nil then
 								RaidRoll_DB["Loot"][TotalWindows]["ITEM_" .. LootNumber] = {}
 							end
-							
+
 							RaidRoll_DB["Loot"][TotalWindows]["ITEM_" .. LootNumber]["LOOTNAME"]	= lootName
 							RaidRoll_DB["Loot"][TotalWindows]["ITEM_" .. LootNumber]["ITEMLINK"] 	= ItemLink
 							RaidRoll_DB["Loot"][TotalWindows]["ITEM_" .. LootNumber]["ICON"]		= lootIcon
 							RaidRoll_DB["Loot"][TotalWindows]["ITEM_" .. LootNumber]["WINNER"]		= "-"
 							RaidRoll_DB["Loot"][TotalWindows]["ITEM_" .. LootNumber]["RECEIVED"]	= "-"
 							RaidRoll_DB["Loot"][TotalWindows]["ITEM_" .. LootNumber]["ITEMLEVEL"]	= ItemLvl
-							
+
 							RR_Loot_SortByItemLevel()
 						end
 					end
 				end
 			end
-			
+
 			-- Beta Version Handler
 			if Version == "Beta_2" then
-				
+
 				Version,player_name,mob_name,ItemId,lootName,ItemLvl,_ = strsplit(Seperator, String,7)
-				
-				
-				
-				
+
+
+
+
 				if RaidRoll_DB["debug"] == true then
 					RR_Test("-----Item Received Breakdown-----")
 					RR_Test(String)
@@ -508,12 +508,12 @@ local Version,mob_guid,player_name,mob_name,LootNumber,ItemLink,rarity,lootIcon,
 					RR_Test(strlen(String))
 					RR_Test(Channel)
 				end
-				
+
 				RR_DuplicateItemFound = false
-				
-				TotalWindows = RaidRoll_DB["Loot"]["TOTAL WINDOWS"] 
-				CurrentWindow = RaidRoll_DB["Loot"]["CURRENT WINDOW"] 
-				
+
+				TotalWindows = RaidRoll_DB["Loot"]["TOTAL WINDOWS"]
+				CurrentWindow = RaidRoll_DB["Loot"]["CURRENT WINDOW"]
+
 				if RaidRoll_DB["Loot"][TotalWindows]["TOTAL ITEMS"] ~= nil then
 					for i=1,RaidRoll_DB["Loot"][TotalWindows]["TOTAL ITEMS"] do
 						if RaidRoll_DB["Loot"][TotalWindows]["ITEM_" .. i]["LOOTNAME"] == lootName then
@@ -521,16 +521,16 @@ local Version,mob_guid,player_name,mob_name,LootNumber,ItemLink,rarity,lootIcon,
 						end
 					end
 				end
-				
+
 				if RR_LastLootMessageTime == nil then RR_LastLootMessageTime = 0 end
-				
-				if RaidRoll_DB["debug"] == true then 
+
+				if RaidRoll_DB["debug"] == true then
 					RR_Test("---Addon Message Times---")
 					RR_Test(RR_LastLootMessageTime)
-					RR_Test(GetTime())		
-					RR_Test(GetTime()-RR_LastLootMessageTime)		
+					RR_Test(GetTime())
+					RR_Test(GetTime()-RR_LastLootMessageTime)
 				end
-				
+
 				-- If the time record is empty or if the message is received in more than 30 seconds of the last one then create a new window
 				if RR_DuplicateItemFound == false then
 					if GetTime() > (RR_LastLootMessageTime + 30) then
@@ -544,35 +544,35 @@ local Version,mob_guid,player_name,mob_name,LootNumber,ItemLink,rarity,lootIcon,
 						end
 					end
 				end
-				
-				TotalWindows = RaidRoll_DB["Loot"]["TOTAL WINDOWS"] 
-				CurrentWindow = RaidRoll_DB["Loot"]["CURRENT WINDOW"] 
-				
+
+				TotalWindows = RaidRoll_DB["Loot"]["TOTAL WINDOWS"]
+				CurrentWindow = RaidRoll_DB["Loot"]["CURRENT WINDOW"]
+
 				if RaidRoll_DB["Loot"][TotalWindows] == nil then
 					RaidRoll_DB["Loot"][TotalWindows] = {}
 				end
-				
+
 				--local _, _, _, _, ItemId = string.find(ItemLink, "|?c?f?f?(%x*)|?H?([^:]*):?(%d+):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%-?%d*):?(%-?%d*):?(%d*)|?h?%[?([^%[%]]*)%]?|?h?|?r?")
-				
+
 				if ItemId == nil then
 					ItemId = 0
 				else
 					ItemId = tonumber(ItemId)
 				end
-				
-				_, ItemLink, rarity, ItemLvl, _, _, _, _, _, lootIcon = GetItemInfo(ItemId) 
-				
+
+				_, ItemLink, rarity, ItemLvl, _, _, _, _, _, lootIcon = GetItemInfo(ItemId)
+
 				rarity = tonumber(rarity)
-				
-				
+
+
 				if ItemLvl == nil then
 					ItemLvl = 0
 				end
-				
+
 				ItemLvl = tonumber(ItemLvl)
-				
-				
-				
+
+
+
 				AcceptItem = false
 			-- Special rare items that should be included
 				if 	ItemId == 	46110 	or		-- Alchemist's Cache
@@ -584,19 +584,19 @@ local Version,mob_guid,player_name,mob_name,LootNumber,ItemLink,rarity,lootIcon,
 				else
 					if RaidRoll_DB["debug"] == true then RR_Test("[Rarity] This is >NOT< an acceptable Item - " .. lootName) end
 				end
-				
-				
+
+
 				DontAcceptItem = false
 			-- Special epic items that should not be included
 				if 	ItemId == 	34057 	or		-- Abyss Crystal
-				
+
 					ItemId == 	36931	or		-- Ametrine
 					ItemId == 	36919	or		-- Cardinal Ruby
 					ItemId == 	36928	or		-- Dreadstone
 					ItemId == 	36934	or		-- Eye of Zul
 					ItemId == 	36922	or		-- King's Amber
 					ItemId == 	36925	or		-- Majestic Zircon
-					
+
 					ItemId == 	47241	or		-- Emblem of Triumph
 					ItemId == 	49426	then	-- Emblem of Frost
 						DontAcceptItem = true
@@ -604,10 +604,10 @@ local Version,mob_guid,player_name,mob_name,LootNumber,ItemLink,rarity,lootIcon,
 				else
 					if RaidRoll_DB["debug"] == true then RR_Test("[Epic Items] This is an acceptable Item - " .. lootName) end
 				end
-				
+
 				if rarity == nil then rarity = 0 end
 				if AcceptItem == nil then AcceptItem = false end
-				
+
 				if rarity > 3 or RaidRoll_DB["debug"] == true or AcceptItem == true then
 					if DontAcceptItem == false then
 						if RR_DuplicateItemFound == false then
@@ -616,45 +616,45 @@ local Version,mob_guid,player_name,mob_name,LootNumber,ItemLink,rarity,lootIcon,
 							RaidRoll_DB["Loot"][TotalWindows]["MOB NAME"] 		= mob_name
 							if RaidRoll_DB["Loot"][TotalWindows]["TOTAL ITEMS"] == nil then RaidRoll_DB["Loot"][TotalWindows]["TOTAL ITEMS"] = 0 end
 							RaidRoll_DB["Loot"][TotalWindows]["TOTAL ITEMS"]  	= RaidRoll_DB["Loot"][TotalWindows]["TOTAL ITEMS"] + 1
-							
+
 							LootNumber = RaidRoll_DB["Loot"][TotalWindows]["TOTAL ITEMS"]
-							
+
 							if RaidRoll_DB["Loot"][TotalWindows]["ITEM_" .. LootNumber] == nil then
 								RaidRoll_DB["Loot"][TotalWindows]["ITEM_" .. LootNumber] = {}
 							end
-							
+
 							RaidRoll_DB["Loot"][TotalWindows]["ITEM_" .. LootNumber]["LOOTNAME"]	= lootName
 							RaidRoll_DB["Loot"][TotalWindows]["ITEM_" .. LootNumber]["ITEMLINK"] 	= ItemLink
 							RaidRoll_DB["Loot"][TotalWindows]["ITEM_" .. LootNumber]["ICON"]		= lootIcon
 							RaidRoll_DB["Loot"][TotalWindows]["ITEM_" .. LootNumber]["WINNER"]		= "-"
 							RaidRoll_DB["Loot"][TotalWindows]["ITEM_" .. LootNumber]["RECEIVED"]	= "-"
 							RaidRoll_DB["Loot"][TotalWindows]["ITEM_" .. LootNumber]["ITEMLEVEL"]	= ItemLvl
-							
+
 							RR_Loot_SortByItemLevel()
 						end
 					end
 				end
 			end
-			
-			
-			
-			
-			
-		else	
+
+
+
+
+
+		else
 			if time() >= RR_LastItemDataReSent + 5 then
 				SendAddonMessage( "RRL", "Request" ,"RAID" );
 			end
 		end
 	end
-	
+
 	RR_Loot_Display_Refresh()
 end
 
 function RR_Loot_SortByItemLevel()
 	if RaidRoll_DB["debug"] == true then RR_Test("*****Sorting by item level*****") end
-	TotalWindows = RaidRoll_DB["Loot"]["TOTAL WINDOWS"] 
+	TotalWindows = RaidRoll_DB["Loot"]["TOTAL WINDOWS"]
 	MaxItems = RaidRoll_DB["Loot"][TotalWindows]["TOTAL ITEMS"]
-	
+
 	if MaxItems then
 		if RaidRoll_DB["debug"] == true then RR_Test("Maxitems exists") end
 		if MaxItems > 1 then
@@ -664,28 +664,28 @@ function RR_Loot_SortByItemLevel()
 					if RaidRoll_DB["debug"] == true then RR_Test("Current i = " .. i) end
 					itemLevel_First = RaidRoll_DB["Loot"][TotalWindows]["ITEM_" .. i]["ITEMLEVEL"]
 					itemLevel_Second = RaidRoll_DB["Loot"][TotalWindows]["ITEM_" .. i+1]["ITEMLEVEL"]
-					
-					
+
+
 					if itemLevel_First == nil then itemLevel_First = 0 end
 					if itemLevel_Second == nil then itemLevel_Second = 0 end
-					
-					
-					
+
+
+
 					if itemLevel_First ~= nil and itemLevel_Second ~= nil then
 						if RaidRoll_DB["debug"] == true then RR_Test("Itemlevels are: " .. itemLevel_First .. " and " .. itemLevel_Second) end
-						
+
 						if itemLevel_First < itemLevel_Second then
 							temp = {}
-							
+
 							temp = RaidRoll_DB["Loot"][TotalWindows]["ITEM_" .. i]
 							RaidRoll_DB["Loot"][TotalWindows]["ITEM_" .. i] = RaidRoll_DB["Loot"][TotalWindows]["ITEM_" .. i+1]
-							RaidRoll_DB["Loot"][TotalWindows]["ITEM_" .. i+1] = temp					
+							RaidRoll_DB["Loot"][TotalWindows]["ITEM_" .. i+1] = temp
 						end
 					end
 				end
 			end
 		end
-	end	
+	end
 end
 
 
@@ -701,7 +701,7 @@ function RR_SetupLootFrame()
 
 
 
-				
+
 
 
 
@@ -716,21 +716,21 @@ if RaidRoll_DB["Loot"]["CURRENT WINDOW"] == nil then RaidRoll_DB["Loot"]["CURREN
 
 
 
- 
-  
-  
-  
+
+
+
+
 
 --RR_LOOT_FRAME = CreateFrame("Frame","RR_LOOT_FRAME",UIParent)
 
 rr_LootFrame_backdrop = {
   --bgFile="Interface\DialogFrame\UI-DialogBox-Background",  -- path to the background texture
   --edgeFile="Interface\DialogFrame\UI-DialogBox-Border",  -- path to the border texture
-  
+
 	--bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background",  -- path to the background texture
 	bgFile = 	"Interface\\Addons\\RaidRoll\\Images\\Lich_King",	--"Interface/Tooltips/UI-Tooltip-Background",
 	edgeFile = 	"Interface\\Tooltips\\UI-Tooltip-Border",  -- path to the border texture
-  
+
   tile = false,    -- true to repeat the background texture to fill the frame, false to scale it
   tileSize = 32,  -- size (width or height) of the square repeating background tiles (in pixels)
   edgeSize = 20,  -- thickness of edge segments and square size of edge corners (in pixels)
@@ -751,11 +751,11 @@ RR_LOOT_FRAME:SetBackdrop(rr_LootFrame_backdrop)
 
 
 RR_LOOT_FRAME:SetFrameStrata("MEDIUM")
-RR_LOOT_FRAME:SetWidth(245) -- Set these to whatever height/width is needed 
-RR_LOOT_FRAME:SetHeight(290) -- Set these to whatever height/width is needed 
-	
+RR_LOOT_FRAME:SetWidth(245) -- Set these to whatever height/width is needed
+RR_LOOT_FRAME:SetHeight(290) -- Set these to whatever height/width is needed
 
---RR_LOOT_FRAME:ClearAllPoints(); 
+
+--RR_LOOT_FRAME:ClearAllPoints();
 --RR_LOOT_FRAME:SetPoint("CENTER")
 
 
@@ -788,31 +788,31 @@ end
 
 -- Create 5 strings and a header for the guild ranks
 	Raid_Roll_Loot=CreateFrame("FRAME","Raid_Roll_Loot",RR_LOOT_FRAME);
-	
+
 	RR_Loot_String_WindowName = Raid_Roll_Loot:CreateFontString("Window Name","ARTWORK","GameFontNormal");
 	RR_Loot_String_WindowName:SetPoint("TOPLEFT",RR_LOOT_FRAME,"TOPLEFT", 8, -8);
 	RR_Loot_String_WindowName:SetJustifyH("LEFT")
 	RR_Loot_String_WindowName:SetText("Musou's Loot Tracker")
-	
+
 	RR_Loot_String_MobName = Raid_Roll_Loot:CreateFontString("Mob Name","ARTWORK","GameFontNormal");
 	RR_Loot_String_MobName:SetPoint("TOPLEFT",RR_LOOT_FRAME,"TOPLEFT", 8, -205);
 	RR_Loot_String_MobName:SetJustifyH("LEFT")
 	RR_Loot_String_MobName:SetText(RAIDROLL_LOCALE["Mob"])
-	
+
 	RR_Loot_String_LooterName = Raid_Roll_Loot:CreateFontString("Looter Name","ARTWORK","GameFontNormal");
 	RR_Loot_String_LooterName:SetPoint("TOPLEFT",RR_LOOT_FRAME,"TOPLEFT", 8, -218);
 	RR_Loot_String_LooterName:SetJustifyH("LEFT")
 	RR_Loot_String_LooterName:SetText(RAIDROLL_LOCALE["Looter_Name"])
-	
+
 	RR_Loot_HowManyLoots = Raid_Roll_Loot:CreateFontString("RR_Loot_HowManyLoots" ,"ARTWORK","GameFontNormal");
 	RR_Loot_HowManyLoots:SetPoint("TOPLEFT",RR_LOOT_FRAME,"TOPLEFT", 8, -231);
 	RR_Loot_HowManyLoots:SetJustifyH("Left")
 	RR_Loot_HowManyLoots:SetText(RAIDROLL_LOCALE["Loots"])
-	
-	
-	
-	
-	
+
+
+
+
+
 --------------------THE BUTTONS   [<<] [<]   [>] [>>]--------------------
 	RR_Loot_ButtonFirst = CreateFrame("Button", "RaidRoll_OptionButton", RR_LOOT_FRAME, "UIPanelButtonTemplate")
 	RR_Loot_ButtonFirst:SetWidth(40)
@@ -820,49 +820,49 @@ end
 	RR_Loot_ButtonFirst:SetPoint("BottomLEFT", RR_LOOT_FRAME, "BottomLEFT", 5, 5)
 	RR_Loot_ButtonFirst:SetText("<<")
 	RR_Loot_ButtonFirst:SetScript("OnClick",function() RR_Loot_GotoWindow("First") end)
-	
+
 	RR_Loot_ButtonPrev = CreateFrame("Button", "RaidRoll_OptionButton", RR_LOOT_FRAME, "UIPanelButtonTemplate")
 	RR_Loot_ButtonPrev:SetWidth(40)
 	RR_Loot_ButtonPrev:SetHeight(20)
 	RR_Loot_ButtonPrev:SetPoint("LEFT", RR_Loot_ButtonFirst, "Right", 0, 0)
 	RR_Loot_ButtonPrev:SetText("<")
 	RR_Loot_ButtonPrev:SetScript("OnClick",function() RR_Loot_GotoWindow("Prev") end)
-	
+
 	RR_Loot_ButtonNext = CreateFrame("Button", "RaidRoll_OptionButton", RR_LOOT_FRAME, "UIPanelButtonTemplate")
 	RR_Loot_ButtonNext:SetWidth(40)
 	RR_Loot_ButtonNext:SetHeight(20)
 	RR_Loot_ButtonNext:SetPoint("LEFT", RR_Loot_ButtonPrev, "Right", 0, 0)
 	RR_Loot_ButtonNext:SetText(">")
 	RR_Loot_ButtonNext:SetScript("OnClick",function() RR_Loot_GotoWindow("Next") end)
-	
+
 	RR_Loot_ButtonLast = CreateFrame("Button", "RaidRoll_OptionButton", RR_LOOT_FRAME, "UIPanelButtonTemplate")
 	RR_Loot_ButtonLast:SetWidth(40)
 	RR_Loot_ButtonLast:SetHeight(20)
 	RR_Loot_ButtonLast:SetPoint("LEFT", RR_Loot_ButtonNext, "Right", 0, 0)
 	RR_Loot_ButtonLast:SetText(">>")
 	RR_Loot_ButtonLast:SetScript("OnClick",function() RR_Loot_GotoWindow("Last") end)
-	
+
 	--[[
 	RR_Loot_ButtonRequest = CreateFrame("Button", "RR_Loot_ButtonRequest", RR_LOOT_FRAME, "UIPanelButtonTemplate")
 	RR_Loot_ButtonRequest:SetWidth(130)
 	RR_Loot_ButtonRequest:SetHeight(20)
 	RR_Loot_ButtonRequest:SetPoint("BottomLEFT", RR_LOOT_FRAME, "BottomLEFT", 5, 25)
 	RR_Loot_ButtonRequest:SetText("Request Item Data")
-	RR_Loot_ButtonRequest:SetScript("OnClick",	function() 
+	RR_Loot_ButtonRequest:SetScript("OnClick",	function()
 													SendAddonMessage( "RRL", "Request" ,"GUILD" );
 													SendAddonMessage( "RRL", "Request" ,"RAID" );
 												end)
 	]]--
-	
-	
-	
+
+
+
 	RR_Loot_ButtonClear = CreateFrame("Button", "RR_Loot_ButtonClear", RR_LOOT_FRAME, "UIPanelButtonTemplate")
 	RR_Loot_ButtonClear:SetWidth(80)
 	RR_Loot_ButtonClear:SetHeight(20)
 	RR_Loot_ButtonClear:SetPoint("BottomLEFT", RR_Loot_ButtonFirst, "TopLEFT", 0, 0)
 	RR_Loot_ButtonClear:SetText(RAIDROLL_LOCALE["Clear_Data"])
-	RR_Loot_ButtonClear:SetScript("OnClick",	function() 
-													RR_ClearItems() 
+	RR_Loot_ButtonClear:SetScript("OnClick",	function()
+													RR_ClearItems()
 													RR_LastLootMessageTime = 0
 												end)
 
@@ -875,7 +875,7 @@ end
 	RR_Loot_LinkLootButton:SetScript("OnEnter",function(self) RR_MouseOverTooltip(self:GetName())	end)
 	RR_Loot_LinkLootButton:SetScript("OnLeave", function() GameTooltip:Hide()	end)
 
-	
+
 	--[[
 	RR_Loot_ButtonMinMax = CreateFrame("Button", "RaidRoll_OptionButton", RR_LOOT_FRAME, "UIPanelButtonTemplate")
 	RR_Loot_ButtonMinMax:SetWidth(30)
@@ -884,7 +884,7 @@ end
 	RR_Loot_ButtonMinMax:SetText("Min")
 	RR_Loot_ButtonMinMax:SetScript("OnClick",function() RR_Loot_WindowChangeSize("Min","Bottom") end)
 	]]
-	
+
 --------------------THE BUTTONS   [Announce1] [Announce2] [Raid Roll]--------------------
 	for i=1,4 do
 		RR_Loot_Announce1Button = CreateFrame("Button", "RR_Loot_Announce_1_Button_"..i, RR_LOOT_FRAME, "UIPanelButtonTemplate")
@@ -895,8 +895,8 @@ end
 		RR_Loot_Announce1Button:SetScript("OnClick",function(self) RR_LootButton(self:GetName())	end)
 		RR_Loot_Announce1Button:SetScript("OnEnter",function(self) RR_MouseOverButton(self:GetName())	end)
 		RR_Loot_Announce1Button:SetScript("OnLeave", function() GameTooltip:Hide()	end)
-		
-		
+
+
 		RR_Loot_Announce2Button = CreateFrame("Button", "RR_Loot_Announce_2_Button_"..i, RR_LOOT_FRAME, "UIPanelButtonTemplate")
 		RR_Loot_Announce2Button:SetWidth(33)
 		RR_Loot_Announce2Button:SetHeight(18)
@@ -905,7 +905,7 @@ end
 		RR_Loot_Announce2Button:SetScript("OnClick",function(self) RR_LootButton(self:GetName())	end)
 		RR_Loot_Announce2Button:SetScript("OnEnter",function(self) RR_MouseOverButton(self:GetName())	end)
 		RR_Loot_Announce2Button:SetScript("OnLeave", function() GameTooltip:Hide()	end)
-		
+
 		RR_Loot_Announce3Button = CreateFrame("Button", "RR_Loot_Announce_3_Button_"..i, RR_LOOT_FRAME, "UIPanelButtonTemplate")
 		RR_Loot_Announce3Button:SetWidth(33)
 		RR_Loot_Announce3Button:SetHeight(18)
@@ -914,7 +914,7 @@ end
 		RR_Loot_Announce3Button:SetScript("OnClick",function(self) RR_LootButton(self:GetName())	end)
 		RR_Loot_Announce3Button:SetScript("OnEnter",function(self) RR_MouseOverButton(self:GetName())	end)
 		RR_Loot_Announce3Button:SetScript("OnLeave", function() GameTooltip:Hide()	end)
-		
+
 		RR_Loot_RaidRollButton = CreateFrame("Button", "RR_Loot_RaidRollButton_"..i, RR_LOOT_FRAME, "UIPanelButtonTemplate")
 		RR_Loot_RaidRollButton:SetWidth(65)
 		RR_Loot_RaidRollButton:SetHeight(18)
@@ -924,8 +924,8 @@ end
 		RR_Loot_RaidRollButton:SetScript("OnEnter",function(self) RR_MouseOverButton(self:GetName())	end)
 		RR_Loot_RaidRollButton:SetScript("OnLeave", function() GameTooltip:Hide()	end)
 	end
-	
-	
+
+
 --[[
 	RR_Loot_ButtonMinMaxTop = CreateFrame("Button", "RaidRoll_OptionButton", RR_LOOT_FRAME, "UIPanelButtonTemplate")
 	RR_Loot_ButtonMinMaxTop:SetWidth(30)
@@ -935,7 +935,7 @@ end
 	RR_Loot_ButtonMinMaxTop:SetScript("OnClick",function() RR_Loot_WindowChangeSize("Min","Top") end)
 ]]
 
-	
+
 --------------------THE SLIDER BAR--------------------------------
 
  RaidRoll_Loot_Slider = CreateFrame("Slider", "RaidRoll_Loot_Slider_ID", RR_LOOT_FRAME, "OptionsSliderTemplate")
@@ -943,27 +943,27 @@ end
  RaidRoll_Loot_Slider:SetHeight(RR_LOOT_FRAME:GetHeight() - 30 )
  RaidRoll_Loot_Slider:SetPoint('TOPRIGHT', -8, -25)
  RaidRoll_Loot_Slider:SetOrientation('VERTICAL')
- 
+
 
  _G[RaidRoll_Loot_Slider:GetName() .. 'Low']:SetText('');
- _G[RaidRoll_Loot_Slider:GetName() .. 'High']:SetText(''); 
+ _G[RaidRoll_Loot_Slider:GetName() .. 'High']:SetText('');
  _G[RaidRoll_Loot_Slider:GetName() .. 'Text']:SetText('');
 
 
- 
+
  RaidRoll_Loot_Slider:SetMinMaxValues(1, 1)
  RaidRoll_Loot_Slider:SetValueStep(1)
  RaidRoll_Loot_Slider:SetValue(1)
 
  RaidRoll_Loot_Slider:Show()
- 
- 
+
+
   RaidRoll_Loot_Slider:SetScript("OnValueChanged",function()
 	RaidRoll_Loot_Slider_Window_Scroll(0)
   end)
- 
+
  ----------------------------------------------------
- 
+
  -- This allows scrolling and passes arg1 (the direction of the scrolling [1 or -1] )
 RR_LOOT_FRAME:EnableMouseWheel(1)
  RR_LOOT_FRAME:SetScript("OnMouseWheel",function()
@@ -978,68 +978,68 @@ end)
  Close_Button:SetPoint("TOPRIGHT", RR_LOOT_FRAME, "TOPRIGHT", -0, -0)
 
 --------------------------------------------------------------------------------------------------------
-	
+
 	-- Create frames which will be used for items
 	for i=1,4 do
 		RR_Loot_LootID_String_i = Raid_Roll_Loot:CreateFontString("RR_Loot_LootID_String"..i ,"ARTWORK","GameFontNormal");
 		RR_Loot_LootID_String_i:SetPoint("TOPLEFT",RR_LOOT_FRAME,"TOPLEFT", 5, 20 - (i*45));
 		RR_Loot_LootID_String_i:SetJustifyH("LEFT")
-		RR_Loot_LootID_String_i:SetWidth(20); 
+		RR_Loot_LootID_String_i:SetWidth(20);
 		RR_Loot_LootID_String_i:SetText(i)
-		
+
 		RR_Loot_Name_String_i = Raid_Roll_Loot:CreateFontString("RR_Loot_Name_String"..i ,"ARTWORK","GameFontNormal");
 		RR_Loot_Name_String_i:SetPoint("TOPLEFT",RR_LOOT_FRAME,"TOPLEFT", 55, 20 - (i*45));
 		RR_Loot_Name_String_i:SetJustifyH("LEFT")
-		RR_Loot_Name_String_i:SetWidth(170); 
+		RR_Loot_Name_String_i:SetWidth(170);
 		RR_Loot_Name_String_i:SetText("Item "..i)
-		RR_Loot_Name_String_i:SetNonSpaceWrap(true) 
-		
+		RR_Loot_Name_String_i:SetNonSpaceWrap(true)
+
 		--[[
 		RR_Loot_Won_String_i = Raid_Roll_Loot:CreateFontString("RR_Loot_Won_String"..i ,"ARTWORK","GameFontNormal");
 		RR_Loot_Won_String_i:SetPoint("TOPLEFT",RR_Loot_Name_String_i,"TOPLEFT", 0, -11);
 		RR_Loot_Won_String_i:SetJustifyH("LEFT")
-		RR_Loot_Won_String_i:SetWidth(200); 
+		RR_Loot_Won_String_i:SetWidth(200);
 		--RR_Loot_Won_String_i:SetText("Won Item: "..i)
 		]]
-		
+
 		--[[
 		RR_Loot_Received_String_i = Raid_Roll_Loot:CreateFontString("RR_Loot_Received_String"..i ,"ARTWORK","GameFontNormal");
 		RR_Loot_Received_String_i:SetPoint("TOPLEFT",RR_Loot_Won_String_i,"TOPLEFT", 0, -12);
 		RR_Loot_Received_String_i:SetJustifyH("LEFT")
-		RR_Loot_Received_String_i:SetWidth(200); 
+		RR_Loot_Received_String_i:SetWidth(200);
 		RR_Loot_Received_String_i:SetText("Received: "..i)
 		]]
-		
+
 		RR_LootIcon = CreateFrame("Button","RR_LootIcon"..i,RR_LOOT_FRAME)
 		--RR_LootIcon:SetFrameStrata("FULLSCREEN")
-		RR_LootIcon:SetWidth(40) -- Set these to whatever height/width is needed 
-		RR_LootIcon:SetHeight(40) -- Set these to whatever height/width is needed 
-		--RR_LootIcon:ClearAllPoints(); 
+		RR_LootIcon:SetWidth(40) -- Set these to whatever height/width is needed
+		RR_LootIcon:SetHeight(40) -- Set these to whatever height/width is needed
+		--RR_LootIcon:ClearAllPoints();
 		RR_LootIcon:SetPoint("TopLeft", "RR_LOOT_FRAME", "TopLeft", 15, 20 - (i*45))
 		RR_LootIcon:SetBackdrop(rr_default_backdrop)
 		--RR_LootIcon:Show()
-		
-		
-		RR_LootIcon:SetScript("OnEnter", function(self) 
+
+
+		RR_LootIcon:SetScript("OnEnter", function(self)
 											RR_MouseOverName = self:GetName()
-											RR_LootIcon:SetScript("OnUpdate", 	function() 
-																					RR_MouseOver(RR_MouseOverName)	
+											RR_LootIcon:SetScript("OnUpdate", 	function()
+																					RR_MouseOver(RR_MouseOverName)
 																				end)
 											end)
-		
-		
-		
-		RR_LootIcon:SetScript("OnLeave", function() 
-											GameTooltip:Hide();	
+
+
+
+		RR_LootIcon:SetScript("OnLeave", function()
+											GameTooltip:Hide();
 											SetCursor(nil)
-											RR_LootIcon:SetScript("OnUpdate", 	function() 
+											RR_LootIcon:SetScript("OnUpdate", 	function()
 																					-- Dont do anything
 																				end)
 										end)
-		
-		
-		
-		RR_LootIcon:SetScript("OnMouseUp", function(self,button) 
+
+
+
+		RR_LootIcon:SetScript("OnMouseUp", function(self,button)
 												TryOnItem = false
 												InsertItem = false
 												if button == "LeftButton" then
@@ -1054,19 +1054,19 @@ end)
 													end
 												end
 											 end)
-		
-		
-		
-		
-	end	
-	
+
+
+
+
+	end
+
 	RR_Loot_CurrentVsMaxWindow = Raid_Roll_Loot:CreateFontString("RR_Loot_CurrentVsMaxWindow_String" ,"ARTWORK","GameFontNormal");
 	RR_Loot_CurrentVsMaxWindow:SetPoint("BottomRight",RR_LOOT_FRAME,"BottomRight", -20, 12);
 	RR_Loot_CurrentVsMaxWindow:SetJustifyH("Right")
-	RR_Loot_CurrentVsMaxWindow:SetWidth(60); 
+	RR_Loot_CurrentVsMaxWindow:SetWidth(60);
 	RR_Loot_CurrentVsMaxWindow:SetFont("Fonts\\FRIZQT__.TTF", 10)
 	RR_Loot_CurrentVsMaxWindow:SetText("0/0")
-	
+
 
 	RR_Loot_Display_Refresh()
 end
@@ -1096,14 +1096,14 @@ function RR_Loot_GotoWindow(WhichWindow)
 		end
 	end
 	RaidRoll_Loot_Slider:SetValue(1)
-	
+
 	RR_Loot_Display_Refresh()
-	
-	if RaidRoll_DB["debug"] == true then 
+
+	if RaidRoll_DB["debug"] == true then
 		if RaidRoll_DB["Loot"]["CURRENT WINDOW"] 	~= nil then RR_Test("Current: " .. RaidRoll_DB["Loot"]["CURRENT WINDOW"]) end
 		if RaidRoll_DB["Loot"]["TOTAL WINDOWS"] 	~= nil then RR_Test("Total:   " .. RaidRoll_DB["Loot"]["TOTAL WINDOWS"] ) end
 	end
-	
+
 	RaidRoll_Loot_Slider_Window_Scroll(0)
 end
 
@@ -1114,30 +1114,30 @@ function RaidRoll_Loot_Slider_Window_Scroll(direction)
 		-- Debugging, shows the direction and value
 		if RaidRoll_DB["debug"] == true then RR_Test(direction) end
 		if RaidRoll_DB["debug"] == true then RR_Test(RaidRoll_Loot_Slider:GetValue()) end
-		
+
 		--MOB_ID = RaidRoll_DB["Loot"][Current_Window]
 		local Current_Window = RaidRoll_DB["Loot"]["CURRENT WINDOW"]
-		
+
 		if RaidRoll_DB["Loot"][Current_Window]["TOTAL ITEMS"] >= 4 then
 			Loot_MaxNumber = RaidRoll_DB["Loot"][Current_Window]["TOTAL ITEMS"] - 3
 		else
 			Loot_MaxNumber = 1
 		end
-		
+
 		RaidRoll_Loot_Slider:SetMinMaxValues(1, Loot_MaxNumber)
-		
-		
+
+
 		RaidRoll_Loot_Slider:SetValue(RaidRoll_Loot_Slider:GetValue() - (direction * 1))
-		
+
 		if RaidRoll_Loot_Slider:GetValue() > Loot_MaxNumber then
 			RaidRoll_Loot_Slider:SetValue(Loot_MaxNumber)
 		end
-		
+
 		--RR_ScrollOffset = RaidRoll_Loot_Slider:GetValue() - 1
-	 
+
 		RR_Loot_Display_Refresh()
 	end
-	
+
 	if GetMouseFocus() ~= nil then
 		if GetMouseFocus():GetName() == "RR_LootIcon1" or GetMouseFocus():GetName() == "RR_LootIcon2" or GetMouseFocus():GetName() == "RR_LootIcon3" or GetMouseFocus():GetName() == "RR_LootIcon4" then
 			RR_MouseOver(GetMouseFocus():GetName())
@@ -1151,7 +1151,7 @@ end
 --	--	--	--	--	--	--	--	--	--	--	--
 --		USED TO REFRESH THE LOOT WINDOW DISPLAY
 --		FILLING IN ITEM NAMES, ITEM ICONS AND
---		MOB NAME. 
+--		MOB NAME.
 --	--	--	--	--	--	--	--	--	--	--	--
 function RR_Loot_Display_Refresh()
 
@@ -1161,10 +1161,10 @@ local Total_Windows = RaidRoll_DB["Loot"]["TOTAL WINDOWS"]
 if Total_Windows == 0 then
 	for i=1,4 do
 		_G["RR_Loot_LootID_String"..i]:SetText("")
-		
+
 		_G["RR_Loot_Name_String"..i]:SetText("")
 		_G["RR_LootIcon"..i]:SetBackdrop(rr_default_backdrop)
-		
+
 		_G["RR_Loot_Announce_1_Button_"..i]:Hide()
 		_G["RR_Loot_Announce_2_Button_"..i]:Hide()
 		_G["RR_Loot_Announce_3_Button_"..i]:Hide()
@@ -1172,7 +1172,7 @@ if Total_Windows == 0 then
 	end
 	RR_Loot_String_MobName:SetText(RAIDROLL_LOCALE["Mob"])
 	RR_Loot_String_LooterName:SetText(RAIDROLL_LOCALE["Looter_Name"])
-	
+
 	RR_Loot_CurrentVsMaxWindow:SetText("-/-")
 	RR_Loot_HowManyLoots:SetText(RAIDROLL_LOCALE["Loots"])
 end
@@ -1204,7 +1204,7 @@ end
 	if RaidRoll_DB["Loot"][Current_Window] == nil then RaidRoll_DB["Loot"][Current_Window] = {} end
 	if RaidRoll_DB["Loot"][Current_Window]["TOTAL ITEMS"] == nil then RaidRoll_DB["Loot"][Current_Window]["TOTAL ITEMS"] = 0 end
 
-	if RaidRoll_DB["debug"] == true then 
+	if RaidRoll_DB["debug"] == true then
 		RR_Test("----RR_Loot_Display_Refresh 1----")
 		RR_Test("Current_Window " .. Current_Window)
 		RR_Test("TOTAL ITEMS " .. RaidRoll_DB["Loot"][Current_Window]["TOTAL ITEMS"])
@@ -1218,18 +1218,18 @@ end
 			if i <= tonumber(RaidRoll_DB["Loot"][Current_Window]["TOTAL ITEMS"]) then
 			--Get the slider offset
 				j = i + RaidRoll_Loot_Slider:GetValue() - 1
-				
+
 				local MobName		= RaidRoll_DB["Loot"][Current_Window]["MOB NAME"]
 				local LooterName	= RaidRoll_DB["Loot"][Current_Window]["LOOTER NAME"]
-				
+
 				if RaidRoll_DB["Loot"][Current_Window]["ITEM_"..j] == nil then RaidRoll_DB["Loot"][Current_Window]["ITEM_"..j] = {} end
 				local ItemLink 	= RaidRoll_DB["Loot"][Current_Window]["ITEM_"..j]["ITEMLINK"]
 				local ItemIcon 	= RaidRoll_DB["Loot"][Current_Window]["ITEM_"..j]["ICON"]
 				local Winner 		= RaidRoll_DB["Loot"][Current_Window]["ITEM_"..j]["WINNER"]
 				local Received 	= RaidRoll_DB["Loot"][Current_Window]["ITEM_"..j]["RECEIVED"]
-				
-				
-				if RaidRoll_DB["debug"] == true then 
+
+
+				if RaidRoll_DB["debug"] == true then
 					RR_Test("----RR_Loot_Display_Refresh----")
 					RR_Test(MobName)
 					RR_Test(LooterName)
@@ -1238,18 +1238,18 @@ end
 					RR_Test(Winner)
 					RR_Test(Received)
 				end
-				
-				
-				
-				
+
+
+
+
 				_G["RR_Loot_LootID_String"..i]:SetText(j)
-				
+
 				_G["RR_Loot_Name_String"..i]:SetText(ItemLink)
 				_G["RR_LootIcon"..i]:SetBackdrop( {bgFile = ItemIcon	})
 				--_G["RR_Loot_Won_String"..i]:SetText("Won Item: " .. Winner)
 				--_G["RR_Loot_Received_String"..i]:SetText("Received: " .. Received)
-				
-				
+
+
 				if GetNumRaidMembers() ~= 0 then -- we are in a raid
 					if IsRaidLeader() == nil and IsRaidOfficer() == nil then
 						_G["RR_Loot_Announce_1_Button_"..i]:Hide()
@@ -1268,26 +1268,26 @@ end
 					if RaidRoll_DBPC[UnitName("player")]["RR_Enable3Messages"] == true then _G["RR_Loot_Announce_3_Button_"..i]:Show() end
 					_G["RR_Loot_RaidRollButton_"..i]:Show()
 				end
-				
+
 				RR_Loot_String_MobName:SetText(RAIDROLL_LOCALE["Mob"].. MobName)
 				RR_Loot_String_LooterName:SetText(RAIDROLL_LOCALE["Looter_Name"] .. LooterName)
-				
+
 				RR_Loot_CurrentVsMaxWindow:SetText(RaidRoll_DB["Loot"]["CURRENT WINDOW"].."/"..RaidRoll_DB["Loot"]["TOTAL WINDOWS"])
 				RR_Loot_HowManyLoots:SetText(RAIDROLL_LOCALE["Loots"] .. RaidRoll_DB["Loot"][Current_Window]["TOTAL ITEMS"])
 			else
 				_G["RR_Loot_LootID_String"..i]:SetText("")
-				
+
 				_G["RR_Loot_Name_String"..i]:SetText("")
 				_G["RR_LootIcon"..i]:SetBackdrop(rr_default_backdrop)
 				--_G["RR_Loot_Won_String"..i]:SetText("")	--Won Item: ")
-				
+
 				_G["RR_Loot_Announce_1_Button_"..i]:Hide()
 				_G["RR_Loot_Announce_2_Button_"..i]:Hide()
 				_G["RR_Loot_Announce_3_Button_"..i]:Hide()
 				_G["RR_Loot_RaidRollButton_"..i]:Hide()
-				
+
 				--_G["RR_Loot_Received_String"..i]:SetText("Received: ")
-				
+
 			end
 		end
 	end
@@ -1305,14 +1305,14 @@ end
 function RR_LinkLoot()
 	if RaidRoll_DB["Loot"]["CURRENT WINDOW"] 	~= nil then
 		Window = RaidRoll_DB["Loot"]["CURRENT WINDOW"]
-		
+
 		Max = RaidRoll_DB["Loot"][Window]["TOTAL ITEMS"]
 		Name = RaidRoll_DB["Loot"][Window]["MOB NAME"]
-		
+
 		if GetNumRaidMembers() ~= 0 then -- we are in a raid
 		-- Setup announce types (raid chat)
 			rr_AnnounceType = "RAID"
-		else 
+		else
 		-- Setup announce types (Party and raid warning if in a party, say if alone)
 			if GetNumPartyMembers() > 0 then
 				rr_AnnounceType = "PARTY"
@@ -1320,13 +1320,13 @@ function RR_LinkLoot()
 				rr_AnnounceType = "SAY"
 			end
 		end
-		
+
 		if Name ~= nil then
 			SendChatMessage(RAIDROLL_LOCALE["Displaying_Loots_for"] ..Name, rr_AnnounceType)
-			
+
 			for i=1,Max do
-				Item = RaidRoll_DB["Loot"][Window]["ITEM_" .. i]["ITEMLINK"] 
-				
+				Item = RaidRoll_DB["Loot"][Window]["ITEM_" .. i]["ITEMLINK"]
+
 				SendChatMessage(i..": "..Item, rr_AnnounceType)
 			end
 		end
@@ -1355,33 +1355,33 @@ function RR_MouseOver(ID,TryOnItem,InsertItem)
 	if ID == "RR_LootIcon2" then i = 2 end
 	if ID == "RR_LootIcon3" then i = 3 end
 	if ID == "RR_LootIcon4" then i = 4 end
-	
-	j = i + RaidRoll_Loot_Slider:GetValue() - 1
+
+	local j = i + RaidRoll_Loot_Slider:GetValue() - 1
 
 	local Current_Window = RaidRoll_DB["Loot"]["CURRENT WINDOW"]
 	--MOB_ID = RaidRoll_DB["Loot"][Current_Window]
 
 	GameTooltip_SetDefaultAnchor( GameTooltip, UIParent )
-	GameTooltip:ClearAllPoints(); 
+	GameTooltip:ClearAllPoints();
 	GameTooltip:SetPoint("bottomleft", _G[ID], "topright", 0, 0)
 	GameTooltip:ClearLines()
-	
+
 	if RaidRoll_DB["Loot"][Current_Window] ~= nil then
 		if RaidRoll_DB["Loot"][Current_Window]["ITEM_"..j] ~= nil then
 			GameTooltip:SetHyperlink(RaidRoll_DB["Loot"][Current_Window]["ITEM_"..j]["ITEMLINK"])
-			
+
 			LootItemlink = RaidRoll_DB["Loot"][Current_Window]["ITEM_"..j]["ITEMLINK"]
-			
-			
-			
+
+
+
 			if InsertItem == true then
 				ChatFrameEditBox:Insert(LootItemlink)
 			end
-			
+
 			if TryOnItem == true then
 				DressUpItemLink(LootItemlink)
 			end
-			
+
 			if IsControlKeyDown()  then
 				ShowInspectCursor()
 			else
@@ -1393,21 +1393,21 @@ function RR_MouseOver(ID,TryOnItem,InsertItem)
 	else
 		SetCursor(nil)
 	end
-	
-	
+
+
 --[[
-	
+
 	RR_GearItemlink1 = nil
 	RR_GearItemlink2 = nil
-	
-	
+
+
 	if Button ~= nil then
 		if LootItemlink ~= nil then
 			if IsEquippableItem(LootItemlink) then
-				_, _, _, _, _, _, _, _,	itemEquipLoc = GetItemInfo(LootItemlink) 
+				_, _, _, _, _, _, _, _,	itemEquipLoc = GetItemInfo(LootItemlink)
 				RR_Test(itemEquipLoc)
 				Slot1, Slot2 = RR_GetpossibleSlots(itemEquipLoc)
-				
+
 				if Slot1 ~= nil then
 					RR_GearItemlink1 = GetInventoryItemLink("player", Slot1)
 				end
@@ -1417,23 +1417,23 @@ function RR_MouseOver(ID,TryOnItem,InsertItem)
 			end
 		end
 	end
-	
-	
-	
-	
+
+
+
+
 --	********************* SETUP COMPARE TOOLTIP 1 *********************
 	GameTooltip_SetDefaultAnchor( RR_Compare_Tooltip1, UIParent )
-	RR_Compare_Tooltip1:ClearAllPoints(); 
-	
+	RR_Compare_Tooltip1:ClearAllPoints();
+
 -- place the window on the left side if the gametooltip is on the right side of the screen, left it otherwise
 	if GameTooltip:GetCenter() > UIParent:GetCenter() then
 		RR_Compare_Tooltip1:SetPoint("right", GameTooltip, "left")
 	else
 		RR_Compare_Tooltip1:SetPoint("left", GameTooltip, "right")
 	end
-	
+
 	RR_Compare_Tooltip1:ClearLines()
-	
+
 	if RaidRoll_DB["Loot"][Current_Window] ~= nil then
 		if RaidRoll_DB["Loot"][Current_Window]["ITEM_"..j] ~= nil then
 			if RR_GearItemlink1 ~= nil then
@@ -1441,20 +1441,20 @@ function RR_MouseOver(ID,TryOnItem,InsertItem)
 			end
 		end
 	end
-	
+
 --	********************* SETUP COMPARE TOOLTIP 2 *********************
 	GameTooltip_SetDefaultAnchor( RR_Compare_Tooltip2, UIParent )
-	RR_Compare_Tooltip2:ClearAllPoints(); 
-	
+	RR_Compare_Tooltip2:ClearAllPoints();
+
 -- place the window on the left side if the gametooltip is on the right side of the screen, left it otherwise
 	if GameTooltip:GetCenter() > UIParent:GetCenter() then
 		RR_Compare_Tooltip2:SetPoint("right", RR_Compare_Tooltip1, "left")
 	else
 		RR_Compare_Tooltip2:SetPoint("left", RR_Compare_Tooltip1, "right")
 	end
-	
+
 	RR_Compare_Tooltip2:ClearLines()
-	
+
 	if RaidRoll_DB["Loot"][Current_Window] ~= nil then
 		if RaidRoll_DB["Loot"][Current_Window]["ITEM_"..j] ~= nil then
 			if RR_GearItemlink2 ~= nil then
@@ -1463,8 +1463,8 @@ function RR_MouseOver(ID,TryOnItem,InsertItem)
 		end
 	end
 	]]
-	
-end 
+
+end
 
 
 
@@ -1481,19 +1481,19 @@ function RR_LootButton(Whatbutton)
 
 	_,_,AnnounceType,ID,Button,ItemID = strsplit("_" ,Whatbutton)
 
-	if RaidRoll_DB["debug"] == true then 
+	if RaidRoll_DB["debug"] == true then
 		RR_Test(Whatbutton)
 		RR_Test(AnnounceType)
 		RR_Test(ID)	-- announce = button id, otherwise its the ItemID
 		RR_Test(Button)	-- only used by announce buttons
 		RR_Test(ItemID)	-- only used by announce buttons
 	end
-	
+
 	if ItemID ~= nil then
 		ItemID_2 = tonumber(ItemID)
 		ItemID_2 = ItemID_2 + RaidRoll_Loot_Slider:GetValue() - 1
 	end
-	
+
 	if ID ~= nil then
 		ID_2 = tonumber(ID)
 		ID_2 = ID_2 + RaidRoll_Loot_Slider:GetValue() - 1
@@ -1501,15 +1501,15 @@ function RR_LootButton(Whatbutton)
 
 	if AnnounceType == "Announce" then
 		ItemLink = RaidRoll_DB["Loot"][Current_Window]["ITEM_"..ItemID_2]["ITEMLINK"]
-		
+
 		AnnounceMessage,Channel = RR_AnnounceMsg(ID, ItemLink)
-		
+
 		SendChatMessage(AnnounceMessage, Channel)
 	else
-		
+
 		RR_Command(RaidRoll_DB["Loot"][Current_Window]["ITEM_"..ID_2]["ITEMLINK"])
 	end
-end 
+end
 
 
 
@@ -1524,51 +1524,51 @@ function RR_MouseOverButton(Whatbutton)
 Current_Window = RaidRoll_DB["Loot"]["CURRENT WINDOW"]
 
 	_,_,AnnounceType,ID,Button,ItemID = strsplit("_" ,Whatbutton)
-	if RaidRoll_DB["debug"] == true then 
+	if RaidRoll_DB["debug"] == true then
 		RR_Test(Whatbutton)
 		RR_Test(AnnounceType)
 		RR_Test(ID)	-- announce = button id, otherwise its the ItemID
 		RR_Test(Button)	-- only used by announce buttons
 		RR_Test(ItemID)	-- only used by announce buttons
 	end
-	
+
 	if ItemID ~= nil then
 		ItemID_2 = tonumber(ItemID)
 		ItemID_2 = ItemID_2 + RaidRoll_Loot_Slider:GetValue() - 1
 	end
-	
+
 	if ID ~= nil then
 		ID_2 = tonumber(ID)
 		ID_2 = ID_2 + RaidRoll_Loot_Slider:GetValue() - 1
 	end
-	
+
 	if AnnounceType == "Announce" then
 		ItemLink = RaidRoll_DB["Loot"][Current_Window]["ITEM_"..ItemID_2]["ITEMLINK"]
-		
+
 		AnnounceMessage = RR_AnnounceMsg(ID, ItemLink)
-		
+
 		GameTooltip_SetDefaultAnchor( GameTooltip, UIParent )
-		GameTooltip:ClearAllPoints(); 
+		GameTooltip:ClearAllPoints();
 		GameTooltip:SetPoint("bottomLEFT", _G["RR_Loot_Announce_".. ID .."_Button_"..ItemID], "top", 0, 0)
 		GameTooltip:ClearLines()
-		
+
 		GameTooltip:AddLine(AnnounceMessage,1,1,1)
-		GameTooltip:Show() 
-		
+		GameTooltip:Show()
+
 		if RaidRoll_DB["debug"] == true then RR_Test(AnnounceMessage) end
 	else
 		ItemLink = RaidRoll_DB["Loot"][Current_Window]["ITEM_"..ID_2]["ITEMLINK"]
-		
+
 		AnnounceMessage = "<<Raid Rolling for: ".. ItemLink .." >> (ID - Name)"
-		
+
 		GameTooltip_SetDefaultAnchor( GameTooltip, UIParent )
-		GameTooltip:ClearAllPoints(); 
+		GameTooltip:ClearAllPoints();
 		GameTooltip:SetPoint("bottomLEFT", _G["RR_Loot_RaidRollButton_".. ID], "top", 0, 0)
 		GameTooltip:ClearLines()
-		
+
 		GameTooltip:AddLine(AnnounceMessage,1,1,1)
-		GameTooltip:Show() 
-		
+		GameTooltip:Show()
+
 		if RaidRoll_DB["debug"] == true then RR_Test(AnnounceMessage) end
 	end
 
@@ -1593,7 +1593,7 @@ function RR_AnnounceMsg(ID, ItemLink)
 		else
 			rr_AnnounceType2 = "RAID"
 		end
-	else 
+	else
 	-- Setup announce types (Party and raid warning if in a party, say if alone)
 		if GetNumPartyMembers() > 0 then
 			rr_AnnounceType1 = "PARTY"
@@ -1603,19 +1603,19 @@ function RR_AnnounceMsg(ID, ItemLink)
 			rr_AnnounceType2 = "SAY"
 		end
 	end
-	
+
 	AnnounceMessage = _G["Raid_Roll_SetMsg"..ID.."_EditBox"]:GetText()
-	
+
 	AnnounceMessage_l = strlower(AnnounceMessage)
-	
+
 	startpos,endpos = strfind(AnnounceMessage_l, "%[item%]")
-	
+
 	if startpos ~= nil and endpos ~= nil then
 		AnnounceMessage = string.sub(AnnounceMessage, 0, startpos-1) .. ItemLink .. string.sub(AnnounceMessage, endpos+1)
 	end
-	
+
 	return AnnounceMessage,rr_AnnounceType2
-end 
+end
 
 
 
@@ -1643,7 +1643,7 @@ BottomLoc 	= RR_LOOT_FRAME:GetBottom();
 xoff = RR_LOOT_FRAME:GetLeft()
 
 
-	if RaidRoll_DB["debug"] == true then 
+	if RaidRoll_DB["debug"] == true then
 		RR_Test("-----")
 		RR_Test(xoff)
 		RR_Test(BottomLoc)
@@ -1665,79 +1665,79 @@ xoff = RR_LOOT_FRAME:GetLeft()
 		RR_Loot_ButtonMinMax:SetText("Max")
 		RR_Loot_ButtonMinMax:SetScript("OnClick",function() RR_Loot_WindowChangeSize("Max") end)
 		RR_LOOT_FRAME:SetHeight(30)
-		
+
 		--RR_Loot_ButtonMinMaxTop:Hide()
-		
+
 		for i=1,4 do
 			_G["RR_Loot_Name_String" .. i]:Hide()
-			--_G["RR_Loot_Won_String" .. i]:Hide() 
+			--_G["RR_Loot_Won_String" .. i]:Hide()
 			--_G["RR_Loot_Received_String" .. i]:Hide()
 			_G["RR_LootIcon"..i]:Hide()
-			
+
 			RR_Loot_String_MobName:Hide()
 			RR_Loot_String_LooterName:Hide()
-			
+
 			RR_Loot_ButtonFirst:Hide()
 			RR_Loot_ButtonPrev:Hide()
 			RR_Loot_ButtonNext:Hide()
 			RR_Loot_ButtonLast:Hide()
-			
+
 			RaidRoll_Loot_Slider:Hide()
-		end	
-		
+		end
+
 	end
-	
+
 	if MinMax == "Max" then
 		RR_Loot_ButtonMinMax:SetText("Min")
 		RR_Loot_ButtonMinMax:SetScript("OnClick",function() RR_Loot_WindowChangeSize("Min") end)
 		RR_LOOT_FRAME:SetHeight(270)
-		
+
 		--RR_Loot_ButtonMinMaxTop:Show()
-		
+
 		for i=1,4 do
 			_G["RR_Loot_Name_String" .. i]:Show()
-			--_G["RR_Loot_Won_String" .. i]:Show() 
+			--_G["RR_Loot_Won_String" .. i]:Show()
 			--_G["RR_Loot_Received_String" .. i]:Show()
 			_G["RR_LootIcon"..i]:Show()
-			
+
 			RR_Loot_String_MobName:Show()
 			RR_Loot_String_LooterName:Show()
-			
+
 			RR_Loot_ButtonFirst:Show()
 			RR_Loot_ButtonPrev:Show()
 			RR_Loot_ButtonNext:Show()
 			RR_Loot_ButtonLast:Show()
-			
+
 			RaidRoll_Loot_Slider:Show()
-		end	
-		
+		end
+
 	end
-	
+
 	if TopBottom == "Top" then
 		RR_LOOT_FRAME:ClearAllPoints()
 		RR_LOOT_FRAME:SetPoint("CENTER", nil, "topleft", xoff + (RR_LOOT_FRAME:GetWidth()/2),BottomLoc + (RR_LOOT_FRAME:GetHeight()/2))
 	else
 		RR_LOOT_FRAME:ClearAllPoints()
-		RR_LOOT_FRAME:SetPoint("CENTER", nil, "bottomleft", xoff + (RR_LOOT_FRAME:GetWidth()/2),BottomLoc + (RR_LOOT_FRAME:GetHeight()/2))	
+		RR_LOOT_FRAME:SetPoint("CENTER", nil, "bottomleft", xoff + (RR_LOOT_FRAME:GetWidth()/2),BottomLoc + (RR_LOOT_FRAME:GetHeight()/2))
 	end
-	
+
 	RR_LOOT_FRAME:ClearAllPoints()
 	RR_LOOT_FRAME:SetPoint("CENTER", nil, "bottomleft", xoff + (RR_LOOT_FRAME:GetWidth()/2),BottomLoc + (RR_LOOT_FRAME:GetHeight()/2))
-	
-	
-	
-	
-	
 
 
-end 
+
+
+
+
+
+end
 
 
 
 function RR_GetpossibleSlots(itemEquipLoc)
 
 	local ItemEquipLocations1 = {
-		
+
 		["INVTYPE_AMMO"] = 0,
 		["INVTYPE_HEAD"] = 1,
 		["INVTYPE_NECK"] = 2,
@@ -1767,10 +1767,10 @@ function RR_GetpossibleSlots(itemEquipLoc)
 		["INVTYPE_BAG"] = nil,
 		["INVTYPE_QUIVER"] = nil
 	}
-	
+
 
 	local ItemEquipLocations2 = {
-		
+
 		["INVTYPE_AMMO"] = nil,
 		["INVTYPE_HEAD"] = nil,
 		["INVTYPE_NECK"] = nil,
@@ -1800,7 +1800,7 @@ function RR_GetpossibleSlots(itemEquipLoc)
 		["INVTYPE_BAG"] = nil,
 		["INVTYPE_QUIVER"] = nil
 	}
-	
+
 	return ItemEquipLocations1[itemEquipLoc],ItemEquipLocations2[itemEquipLoc]
 end
 ]]
