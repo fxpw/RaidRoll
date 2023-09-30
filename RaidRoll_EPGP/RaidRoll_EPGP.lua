@@ -68,10 +68,11 @@ function RR_ReallyGetEPGPGuildData()
 						if string_start then
 							Value = tonumber(string.sub(Substring, string_start+1, string_end));
 							if RaidRoll_DB["debug"] == true then RR_Test("Value: " .. Value); end
-						end
+						
 						-- 10
 						
-						RaidRoll_DB[Type] = Value ;
+							RaidRoll_DB[Type] = Value ;
+						end
 					end
 				end
 			end
