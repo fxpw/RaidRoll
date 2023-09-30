@@ -27,6 +27,7 @@ function RR_ReallyGetEPGPGuildData()
 			]]
 			
 			string_start,string_end = string.find(RR_GuildInfo, "%-EPGP%-");
+			if not string_start or not string_end then return end
 			RR_GuildInfo = string.sub(RR_GuildInfo, 1, string_start-2);
 			
 			--[[	
@@ -57,15 +58,17 @@ function RR_ReallyGetEPGPGuildData()
 						]]
 						
 						string_start,string_end=string.find(Substring, "%@+%a+%_%a+%:");
-						Type = string.upper(string.sub(Substring, string_start+1, string_end-1))
-						if RaidRoll_DB["debug"] == true then RR_Test("Type: " .. Type); end
-						
+						if string_start then
+							Type = string.upper(string.sub(Substring, string_start+1, string_end-1))
+							if RaidRoll_DB["debug"] == true then RR_Test("Type: " .. Type); end
+						end
 						-- DECAY_P
 						
 						string_start,string_end=string.find(Substring, "%:%d+");
-						Value = tonumber(string.sub(Substring, string_start+1, string_end));
-						if RaidRoll_DB["debug"] == true then RR_Test("Value: " .. Value); end
-						
+						if string_start then
+							Value = tonumber(string.sub(Substring, string_start+1, string_end));
+							if RaidRoll_DB["debug"] == true then RR_Test("Value: " .. Value); end
+						end
 						-- 10
 						
 						RaidRoll_DB[Type] = Value ;
